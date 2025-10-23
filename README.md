@@ -3,7 +3,7 @@
 
 This is a system based on the RT-Thread operating system using the STM32H750 as the main controller. It utilizes the RT-AK deep learning framework to encapsulate a trained sign language translation model into a library, which is embedded into the system to achieve sign language translation, with outputs visualized on a screen and also broadcast as speech. The system also features a function for the hearing-impaired to obtain the base station location in an emergency and send an alert message to emergency contacts. I am responsible for all kernel system development, including management of translation result objects, human-computer interaction, synchronization mechanisms, design of the RF module, and non-volatile storage.
 ### Object Management:
-Uses a hash linked list to manage allocation with 50 initial page structure pointers. Each page stores object structures, which are inserted at the tail of the node in a doubly circular linked list. Space is allocated dynamically, and objects are displayed by traversing the page header nodes to achieve visualization. 
+A hash-linked list is used to manage allocation, starting with 50 initial page structure pointers. Each page stores object structures, which are appended to the tail of nodes in a doubly circular linked list. Memory is allocated dynamically, and objects are traversed and output through the page header node to achieve LCD visualization.
 ### Human-Computer Interaction:
 Uses dual-channel ADC and one pull-up input GPIO to implement joystick-controlled multi-level menus, such as page turning and exiting the translation interface, changing emergency contacts, and deciding whether to send warning messages. Compared to buttons, it saves more interfaces.
 ### Synchronization mechanism:
