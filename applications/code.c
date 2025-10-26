@@ -1,4 +1,6 @@
 #include "rtthread.h"
+
+
 const rt_uint16_t UnicodeToGB2312_Tab[][2] =
 {
     0x00A4,0xA1E8,
